@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master_Page.master.cs" Inherits="PrudentAir.Master_Page" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>ARS</title>
+    <style type="text/css">
+        .style1
+        {
+            width: 285px;
+        }
+    </style>
+  </head>
+<body >
+    <form id="MasterForm" runat="server">
+     <table width="920px" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td colspan="2">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/images/top-bar.gif" Width="920px"
+                    Height="9" />
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-bottom: 4px;" class="style1">
+                <asp:Image ID="Image2" runat="server" ImageUrl="~/images/plane15.gif" Width="188px"
+                    Height="59px" />
+                <asp:XmlDataSource ID="MenuDatasource" runat="server" 
+                    DataFile="~/App_Data/menudata.xml" />
+            </td>
+            <td valign="bottom" align="right">
+                <asp:Label ID="lblwelcome" Visible="false" runat="server" Text=""></asp:Label>   
+                <asp:HyperLink ID="LnkLogout" runat="server" NavigateUrl="~/Logout.aspx">Logout</asp:HyperLink>
+                       </td>
+        </tr>
+        <tr>
+            <td colspan="2" valign="bottom">
+                <asp:Menu ID="MainMenu" Orientation="Horizontal" runat="server" DataSourceID="MenuDatasource"
+                    StaticDisplayLevels="2" Width="920px" Height="22px" BorderWidth="0" CssClass="tabs"
+                    StaticMenuItemStyle-CssClass="tabstd" 
+                    StaticSelectedStyle-CssClass="tabsselected" 
+                    >
+<StaticSelectedStyle CssClass="tabsselected"></StaticSelectedStyle>
+
+<StaticMenuItemStyle CssClass="tabstd"></StaticMenuItemStyle>
+                    <DataBindings>
+                        <asp:MenuItemBinding DataMember="item" TextField="title" NavigateUrlField="url" ToolTipField="description" />
+                    </DataBindings>
+                </asp:Menu>
+            </td>
+        </tr>        
+        <tr style="height: 520px">
+            <td valign="top" bgcolor="#c6d9ee" align="right" class="style1">
+                <asp:ContentPlaceHolder ID="DefaultLeftContent" runat="server" />
+            </td>
+            <td width="635px" valign="top" bgcolor="#c6d9ee" align="left">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                   
+                    <tr>
+                        <td colspan="2">
+                            <asp:ContentPlaceHolder ID="DefaultContentArea" runat="server"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#c6d9ee" colspan="2">
+                            &nbsp;
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

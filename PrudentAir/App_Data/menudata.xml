@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<item url="~/Home.aspx" title="Home"  description="ARS Home Page">
+  <item url="~/Admin/AdminHome.aspx" title="Admin"  description="Administrator Page" />
+  <item url="~/Flight/Flight.aspx" title="Flight"  description="Flight Info Page " />
+  <item url="~/SearchFlights/SearchFlight.aspx" title="Search"  description="Search Page" />
+  <item url="~/Reservation/Reservation.aspx" title="Reservation"  description="Reservation" />
+  <item url="~/Enquiry/PNREnquiry.aspx" title="PNR Enquiry"  description="PNR Enquiry" />
+  <item url="~/Help/Help.aspx" title="Help"  description="Prudent Air Help Page" />
+ 
+</item>
